@@ -144,9 +144,9 @@ func populateNode(logger hclog.Logger, client *api.Client, nodeIdx int) error {
 	}
 
 	// start := time.Now()
-	// if _, err := catalog.Register(reg, nil); err != nil {
-	// 	return err
-	// }
+	if _, err := catalog.Register(reg, nil); err != nil {
+		return err
+	}
 	// logger.Info("node register", "dur", time.Since(start))
 
 	for svcIdx := 0; svcIdx < servicesPerNode; svcIdx++ {
